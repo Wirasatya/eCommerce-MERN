@@ -7,6 +7,7 @@ const cookieParser = require("cookie-parser");
 const path = require("path");
 
 // app config
+const PORT = process.env.PORT || 2300;
 const app = express();
 app.use(express.json());
 app.use(Cors());
@@ -37,7 +38,6 @@ app.use("/api/payments", require("./routes/Payment.route"));
 app.use("/api/uploads", require("./routes/Upload.route"));
 
 // listen
-const Port = process.env.PORT || 2300;
-app.listen(Port, () => {
-  console.log("server is running on Port : " + Port);
+app.listen(PORT, () => {
+  console.log("server is running on Port : " + PORT);
 });
